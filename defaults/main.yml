@@ -1,2 +1,32 @@
 ---
-certbot_only_deploy: true
+# defaults file for certbot
+
+certbot_create_if_missing: false
+certbot_create_method: standalone
+certbot_admin_email: email@gmail.com
+
+certbot_create_standalone_stop_services:
+  - nginx
+  # - apache
+  # - varnish
+
+certbot_vhosts:
+  - servername: 'abcyourdomain.com'
+    documentroot: '/var/www/abcyourdomain.com'
+  - servername: 'abcyourdomain1.com'
+    documentroot: '/var/www/abcyourdomain1.com'
+
+certbot_create_command: >-
+  {{ certbot_script }} certonly --standalone --noninteractive --agree-tos
+  --email {{ certbot_admin_email }}
+  -d {{ cert_item.domains | join(',') }}
+
+# To install from source (on older OSes or if you need a specific or newer
+# version of Certbot), set this variable to `yes` and configure other options.
+certbot_install_from_source: false
+certbot_repo: https://github.com/certbot/certbot.git
+certbot_version: master
+certbot_keep_updated: true
+
+# Where to put Certbot when installing from source.
+certbot_dir: /opt/certbot
