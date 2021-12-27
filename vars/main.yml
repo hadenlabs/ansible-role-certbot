@@ -1,8 +1,9 @@
 ---
 # vars file for certbot
 
-_root_group: root
-_certbot_packages:
-  - software-properties-common
-  - python-software-properties
-  - wget
+certbot_package: certbot
+
+_certbot_create_files:
+  - path: '/var/www/letsencrypt'
+    state: 'directory'
+    owner: 'www-data'

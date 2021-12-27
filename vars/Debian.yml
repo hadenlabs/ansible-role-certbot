@@ -1,8 +1,18 @@
----
-# vars file for certbot
+# vars file for certbot (Debian specific)
 
-_root_group: root
 _certbot_packages:
-  - software-properties-common
-  - python-software-properties
+  - python-pip
+  - git
+  - build-essential
+  - libssl-dev
+  - libbz2-dev
+  - libreadline-dev
+  - libsqlite3-dev
   - wget
+  - curl
+  - llvm
+  - python-certbot-nginx
+
+_certbot_pip_dependencies:
+  - name: pip
+    version: '*'

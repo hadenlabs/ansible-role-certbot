@@ -5,11 +5,11 @@
 
 - name: Install certbot package dependencies
   ansible.builtin.package:
-    name: '{{ certbot_packages }}'
+    name: '{{ _certbot_packages }}'
     state: present
   become: true
   register: install_certbot_packages
-  when: certbot_packages is defined
+  when: _certbot_packages is defined
   tags:
     - install
     - apt
