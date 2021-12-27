@@ -1,2 +1,2 @@
 ---
-ansible-role-name_only_deploy: true
+certbot_only_deploy: true

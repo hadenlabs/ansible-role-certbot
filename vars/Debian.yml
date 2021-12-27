@@ -1,8 +1,8 @@
 ---
-# vars file for ansible-role-name
+# vars file for certbot
 
 _root_group: root
-_ansible-role-name_packages:
+_certbot_packages:
   - software-properties-common
   - python-software-properties
   - wget

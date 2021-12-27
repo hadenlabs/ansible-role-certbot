@@ -12,6 +12,6 @@
     user: ubuntu
 
   tasks:
-    - name: 'Include ansible-role-template'
+    - name: 'Include ansible-role-certbot'
       include_role:
-        name: 'ansible-role-template'
+        name: 'ansible-role-certbot'

@@ -3,13 +3,13 @@
   apt: update_cache=yes cache_valid_time=600
   when: ansible_os_family == 'Debian'
 
-- name: Install ansible-role-name package dependencies
+- name: Install certbot package dependencies
   ansible.builtin.package:
-    name: '{{ ansible-role-name_packages }}'
+    name: '{{ certbot_packages }}'
     state: present
   become: true
-  register: install_ansible-role-name_packages
-  when: ansible-role-name_packages is defined
+  register: install_certbot_packages
+  when: certbot_packages is defined
   tags:
     - install
     - apt
