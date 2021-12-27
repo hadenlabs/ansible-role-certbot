@@ -1,5 +1,7 @@
- <!-- Space: AnsibleRoleCertbot -->
-<!-- Title: Project -->
+ <!-- Space: AnsibleRoleCertbot --> 
+<!-- Title: Project --> 
+
+
 
 <!--
 
@@ -15,13 +17,28 @@
 
   -->
 
-[![Latest Release](https://img.shields.io/github/release/hadenlabs/ansible-role-certbot)](https://github.com/hadenlabs/ansible-role-certbot/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/ansible-role-certbot/lint-code)](https://github.com/hadenlabs/ansible-role-certbot/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org)
+
+ [![Latest Release](https://img.shields.io/github/release/hadenlabs/ansible-role-certbot)](https://github.com/hadenlabs/ansible-role-certbot/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/ansible-role-certbot/lint-code)](https://github.com/hadenlabs/ansible-role-certbot/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org)
 
 # ansible-role-certbot
 
-ansible-role-certbot for hadenlabs.
+
+
+
+ansible-role-certbot for hadenlabs. 
+
+
+
+
+
+
+
+
+
+
 
 ## Requirements
+
 
 This is a list of applications that need to be installed previously to enjoy all the goodies of this configuration:
 
@@ -29,11 +46,20 @@ This is a list of applications that need to be installed previously to enjoy all
 - [python](https://www.python.org)
 - [taskfile](https://github.com/go-task/task)
 
+
+
+
+
 ## Usage
 
 ```bash
   ansible-galaxy install hadenlabs.certbot
 ```
+
+
+
+
+
 
 ## Examples
 
@@ -53,9 +79,21 @@ To run this playbook with default settings, create a basic playbook like this:
 - hosts: servers
   roles:
     - hadenlabs.certbot
+
+  vars:
+    certbot_create_if_missing: false
+    certbot_create_method: standalone
+    certbot_admin_email: luis@handelabs.com
+    certbot_create_standalone_stop_services:
+    - nginx
+    certbot_vhosts:
+        - {servername: "abcyourdomain.com", documentroot: "/var/www/abcyourdomain.com"}
+        - {servername: "abcyourdomain1.com", documentroot: "/var/www/abcyourdomain1.com"}
 ```
 
-## Requirements
+
+
+ ## Requirements
 
 ## Role Variables
 
@@ -65,11 +103,17 @@ The default role variables in `defaults/main.yml` are:
 # defaults file for ansible-role-certbot
 ```
 
+
+
+
+
+
 ## Help
 
 **Got a question?**
 
 File a GitHub [issue](https://github.com/hadenlabs/ansible-role-certbot/issues).
+
 
 ## Contributing
 
@@ -87,21 +131,37 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ### Backwards compatibility in `0.0.z` and `0.y.z` version
 
-- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is increased. (Initial development)
-- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is increased. (Pre-release)
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is
+  increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is
+  increased. (Pre-release)
+
+
+
 
 ## Copyright
 
 Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
 
+
+
 ## Trademarks
 
 All other trademarks referenced herein are the property of their respective owners.
+
+
+
+
+
 
 ## License
 
 The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
 
+
+
 ## Don't forget to 🌟 Star 🌟 the repo if you like ansible-role-certbot
 
+
 [Your feedback is appreciated](https://github.com/hadenlabs/ansible-role-certbot/issues)
+
