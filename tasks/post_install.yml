@@ -1,1 +1,8 @@
 ---
+- name: Create a daily cron job to automatically renew the certificate.
+  become: true
+  cron:
+    name: 'automatic LetsEncrypt certificate renewal'
+    special_time: daily
+    job: 'certbot renew --standalone --no-self-upgrade --pre-hook "systemctl stop nginx" --post-hook "systemctl start nginx" --quiet'
+    state: present
